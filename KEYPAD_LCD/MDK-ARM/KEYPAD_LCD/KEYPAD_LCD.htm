@@ -3,7 +3,7 @@
 <title>Static Call Graph - [KEYPAD_LCD\KEYPAD_LCD.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image KEYPAD_LCD\KEYPAD_LCD.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Mon Mar 11 00:13:33 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Mar 12 16:28:47 2024
 <BR><P>
 <H3>Maximum Stack Usage =        264 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -485,13 +485,14 @@ Global Symbols
 <P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_it.o(.text.DebugMon_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
-<P><STRONG><a name="[58]"></a>ENTER_PASSWORD</STRONG> (Thumb, 276 bytes, Stack size 56 bytes, main.o(.text.ENTER_PASSWORD))
+<P><STRONG><a name="[58]"></a>ENTER_PASSWORD</STRONG> (Thumb, 308 bytes, Stack size 56 bytes, main.o(.text.ENTER_PASSWORD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = ENTER_PASSWORD &rArr; Lcd_string &rArr; lcd_write_data &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_clear
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_cursor
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_string
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -554,6 +555,7 @@ Global Symbols
 
 <P><STRONG><a name="[56]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENTER_PASSWORD
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CHECK_COL
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_write_data
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_write_command

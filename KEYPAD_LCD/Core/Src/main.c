@@ -307,8 +307,7 @@ void ENTER_PASSWORD(Lcd_HandleTypeDef lcd)
 		//Delete password
 		for(uint8_t o=0 ;o<6;o++)
 		{
-			CURR_PASSWORD[o] = 0;
-			PASSWORD[o] = '0';
+			CURR_PASSWORD[o] = '0';
 		}
 	}
 	else
@@ -317,7 +316,10 @@ void ENTER_PASSWORD(Lcd_HandleTypeDef lcd)
 		Lcd_cursor(&lcd, 0,0);
 		Lcd_string(&lcd, "WRONG PASSWORD");
 		i = 0;
-		HAL_Delay(1000);
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, 1);
+		HAL_Delay(300);
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, 0);
+		HAL_Delay(500);
 	}
 }
 
